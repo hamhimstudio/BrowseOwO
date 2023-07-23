@@ -60,7 +60,7 @@ let defaults = {
         'UwU',
         '*gwomps*'
     ],
-    filter: ['video-title', 'ytd-compact-video-renderer']
+    filter: ['video-title', 'ytd-compact-video-renderer'] // Implemented so YouTube doesnt have a stroke.
 };
 
 function replaceWords(text, wordMap) {
