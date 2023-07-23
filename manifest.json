@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "Owoify",
+    "version": "1.0",
+
+    "description": "Replaces text on webpages with owoified text",
+
+    "background": {
+        "scripts": ["background.js"]
+    },
+
+    "permissions": [
+        "tabs",
+        "activeTab"
+    ],
+
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["Owoifier.js"]
+    }]
+}
