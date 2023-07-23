@@ -1,4 +1,4 @@
-# Customizing the OWO Bot
+# Customizing the Owoify Plugin (Firefox Edition)
 
 The OWO bot allows you to owoify text on a webpage by replacing words and adding random stutters, prefixes, and suffixes. This document explains how to customize the bot by adding your own filters, word replacements, prefixes, and suffixes.
 How the OWO bot works
