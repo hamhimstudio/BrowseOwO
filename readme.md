@@ -5,10 +5,10 @@ How the OWO bot works
 
 ## The main owoify function takes in some text and an options object. It does the following:
 
-    Replace words using a wordMap
-    Randomly stutter words
-    Randomly add prefixes
-    Randomly add suffixes
+- Replace words using a wordMap
+- Randomly stutter words
+- Randomly add prefixes
+- Randomly add suffixes
 
 It returns the modified owoified text.
 
@@ -21,12 +21,11 @@ The owoifyElement function takes in an options object that contains a filter arr
 
 For example, to skip owoifying text under elements with class "skip" or ID "title":
 
-js
-
-Copy code
+```js
 let defaults = {
   filter: ['skip', 'title']
 }
+```
 
 You can add any classes, IDs, or tag names to skip.
 ## Adding custom word replacements
