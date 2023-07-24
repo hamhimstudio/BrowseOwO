@@ -1,8 +1,8 @@
 let defaults = {
     rltow: true,
     yaftern: true,
-    repeaty: true,
-    replaceWords: true,
+    repeaty: false,
+    replaceWords: false,
     wordMap: {
         love: 'wuv',
         mr: 'mistuh',
@@ -60,7 +60,7 @@ let defaults = {
         'UwU',
         '*gwomps*'
     ],
-    filter: ['video-title', 'ytd-compact-video-renderer'] // Implemented so YouTube doesnt have a stroke.
+    filter: ['video-title', 'ytd-compact-video-renderer']
 };
 
 function replaceWords(text, wordMap) {
@@ -98,13 +98,11 @@ function owoifyElement(element, options) {
 
     for (const node of element.childNodes) {
         if (node.nodeType === Node.TEXT_NODE) {
-            // Check if any part of the element's tag name matches any of the filters
             const elementTag = node.parentNode.tagName.toLowerCase();
             if (filter.some((f) => elementTag.includes(f))) {
                 continue;
             }
 
-            // Check if the parent node has any of the specified classes or IDs
             if (node.parentNode.classList) {
                 const classList = Array.from(node.parentNode.classList);
                 if (filter.some((f) => classList.includes(f))) {
@@ -118,7 +116,12 @@ function owoifyElement(element, options) {
                 continue
             }
 
+            if (node.text == "" || node.text == " ") {
+                continue
+            }
+
             node.textContent = owoifyText(node.textContent, options);
+
         } else if (node.nodeType === Node.ELEMENT_NODE) {
             // For some reason TEXT_NODE wasn't enough to get all text on screen.
             owoifyElement(node, options);
